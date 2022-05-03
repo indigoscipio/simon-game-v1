@@ -16,10 +16,10 @@ function nextSequence(){
 //Button Clicks
 for(i = 0; i < buttons.length; i++){
     let userChosenColor = buttons[i].id;
-    userChosenColorArr = buttons[i];
 
     buttons[i].addEventListener("click", function(){
         userClickedPattern.push(userChosenColor);
+        userChosenColorArr = buttons[userChosenColor];
 
         //play audio if button clicked
         playSound(userChosenColor);
