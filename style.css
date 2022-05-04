@@ -27,6 +27,10 @@ body{
     text-align: center;
 }
 
+.game-over{
+    background-color: var(--red) !important;
+}
+
 .container{
     display: flex;
     flex-direction: column;
