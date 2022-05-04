@@ -2,7 +2,23 @@ buttonColors = ["green", "red","yellow", "blue"];
 userClickedPattern = [];
 gamePattern = [];
 let activeAudio = "";
+let levelTitle = document.querySelector("#level-title");
 let buttons = document.querySelectorAll(".btn");
+let gameStart = false;
+level = 0;
+
+document.addEventListener("keydown", (e) => {
+    if(e.key === "a" || e.key ==="A"){
+        if(gameStart === false){
+            gameStart = true;
+            console.log("Game Started!");
+            levelTitle.textContent = "Level 0"
+        }
+        
+    
+
+    }
+})
 
 function nextSequence(){
     var randomNum = Math.floor(Math.random()*4)
@@ -10,6 +26,8 @@ function nextSequence(){
     gamePattern.push(randomChosenColor)
     playSound(randomChosenColor);
     animatePress(randomChosenColor);
+    level++;
+    levelTitle.innerText = `Level ${level}`;
 }
 
 //Button Clicks
